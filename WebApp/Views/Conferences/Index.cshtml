@@ -1,0 +1,81 @@
+﻿@model IEnumerable<WebApp.Models.Conference>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CTheme)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CPlace)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConferenceGuid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CComment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Client.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConferenceType.CTypeName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CTheme)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CPlace)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConferenceGuid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CComment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Client.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConferenceType.CTypeName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ConferenceId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ConferenceId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ConferenceId })
+        </td>
+    </tr>
+}
+
+</table>
